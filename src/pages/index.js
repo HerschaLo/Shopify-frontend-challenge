@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,} from 'react';
 import { Helmet } from 'react-helmet'
 import {Typography, Box} from '@mui/material'
 import styled from '@emotion/styled'
@@ -25,13 +25,6 @@ const HomePage = ()=>{
   const monthBeginningString = `${year}-${month}-1`
   let query=`https://api.nasa.gov/planetary/apod?api_key=YhaJ1mHsDSLT0BoB0cKr1bCKEIvdYxfKuYb03wWW&start_date=${monthBeginningString}&end_date=${currentDateString}`
   
-  if(window){
-    if(window.location.search){
-      let search=window.location.search.split("=")[1]
-      console.log(search)
-      query=`https://api.nasa.gov/planetary/apod?api_key=YhaJ1mHsDSLT0BoB0cKr1bCKEIvdYxfKuYb03wWW&date=${search}`
-    }
-  }
   const goBackMonth = ()=>{
     let newMonth = parseInt(month)-1
     if(newMonth == 0){
