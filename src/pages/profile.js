@@ -75,11 +75,11 @@ const Login = ()=>{
                   }
                   setError('')
                 }}/>
-                <Typography>{error}</Typography>
                 <Button onClick={changeUserName}>
                   Save
                 </Button>
               </Box>
+              <Typography style={{color:"red"}}>{error}</Typography>
               <Button style={{color:'red'}}
               onClick={()=>{
                 signOut(auth)

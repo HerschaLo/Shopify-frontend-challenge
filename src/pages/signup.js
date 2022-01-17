@@ -41,6 +41,28 @@ const Login = ()=>{
       }
     })
   })
+  const googleSignUpHandler = async () =>{
+    const provider = new GoogleAuthProvider()
+    signInWithPopup(auth, provider)
+    .then(async (result)=>{
+      const user = result.user
+      console.log(cookies)
+      let userData = {}
+
+      userData['userName']=user.email.split("@")[0]
+      let liked={}
+      console.log(liked)
+      
+      Object.keys(cookies).forEach((picture)=>{
+        liked[picture]=true
+      })
+
+      userData['likes']=liked
+      await setDoc(doc(db, "users", email),userData)
+
+      window.location='/'
+    })
+  }
   const emailSignUpHandler = async ()=>{
     if(password === passwordConfirm){
       let allUsers = await getDocs(collection(db, "users"))
@@ -102,10 +124,7 @@ const Login = ()=>{
             null
           }
           <SignUpButton onClick={emailSignUpHandler}><Typography>Sign up with email and password</Typography></SignUpButton>
-          <SignUpButton onClick={()=>{
-            const provider = new GoogleAuthProvider()
-              signInWithPopup(auth, provider)
-          }}><Typography>Sign up with Google</Typography></SignUpButton>
+          <SignUpButton onClick={googleSignUpHandler}><Typography>Sign up with Google</Typography></SignUpButton>
         </Box>
       </CookiesProvider>
     </ThemeProvider>
