@@ -29,6 +29,12 @@ const PictureDisplay = (props)=>{
         else{
           imageDates = Object.keys(cookies)
           images = cookies
+
+          imageDates.forEach((imageDate)=>{
+            if(images[imageDate] === 'false'){
+              images[imageDate] = false
+            }
+          })
         }
 
         if(filterByLikes){
