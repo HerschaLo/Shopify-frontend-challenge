@@ -50,7 +50,7 @@ const PictureOfTheDay = (props)=>{
         console.log(isLiked)
         console.log(date)
 
-        if(cookies[date]==='true'|| isLiked){
+        if(cookies[date]==='true' && userEmail!='none'|| isLiked){
           setLiked(true)
           likeButton.current.style.color="#30cf51"
         }
