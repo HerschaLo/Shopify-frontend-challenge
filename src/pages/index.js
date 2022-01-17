@@ -18,8 +18,8 @@ const AdjustMonthButton = styled.button`
 const HomePage = ()=>{
   const currentDate = new Date()
   const [month, setMonth] = useState((currentDate.getMonth()+1).toString())
-  const [day, setDay] = useState(currentDate.getDate())
-  const [year, setYear] = useState(currentDate.getFullYear())
+  const [day, setDay] = useState(currentDate.getDate().toString())
+  const [year, setYear] = useState(currentDate.getFullYear().toString())
 
   const currentDateString = `${year}-${month}-${day}`
   const monthBeginningString = `${year}-${month}-1`
@@ -125,7 +125,7 @@ const HomePage = ()=>{
             <AdjustMonthButton onClick={goBackMonth}>
               <ArrowBackIos /> Previous Month
             </AdjustMonthButton>
-              {parseInt(month) != new Date().getMonth()+1 && year!=new Date().getYear().toString() ? 
+              { year+month !== currentDate.getFullYear().toString()+(currentDate.getMonth()+1).toString()? 
                 <AdjustMonthButton onClick={goForwardMonth}>
                   Next Month <ArrowForwardIos /> 
                 </AdjustMonthButton>
