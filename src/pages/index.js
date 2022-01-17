@@ -125,7 +125,7 @@ const HomePage = ()=>{
             <AdjustMonthButton onClick={goBackMonth}>
               <ArrowBackIos /> Previous Month
             </AdjustMonthButton>
-              {parseInt(month) != new Date().getMonth()+1 ? 
+              {parseInt(month) != new Date().getMonth()+1 && year==new Date().getYear().toString() ? 
                 <AdjustMonthButton onClick={goForwardMonth}>
                   Next Month <ArrowForwardIos /> 
                 </AdjustMonthButton>
