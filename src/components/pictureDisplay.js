@@ -32,7 +32,9 @@ const PictureDisplay = (props)=>{
         if(filterByLikes){
           let limit=0
           let counter=0
-
+          
+          console.log(cookies)
+          console.log(images)
           Object.values(images).forEach((value)=>{
             if(value){
               limit+=1

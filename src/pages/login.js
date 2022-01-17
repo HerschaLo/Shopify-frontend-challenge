@@ -36,7 +36,7 @@ const Login = ()=>{
     <ThemeProvider theme={theme}>
       <Box>
         <Helmet>
-          <title>Signup</title>
+          <title>Login</title>
         </Helmet>
         <Header />
         <Box style={{display:"flex", alignItems:'center', flexDirection:"column", rowGap:"40px"}}>
