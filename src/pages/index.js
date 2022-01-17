@@ -27,6 +27,8 @@ const HomePage = ()=>{
   
   const goBackMonth = ()=>{
     let newMonth = parseInt(month)-1
+
+    console.log(newMonth)
     if(newMonth == 0){
       let newYear = (parseInt(year)-1).toString()
       let daysInMonth = new Date(parseInt(newYear), newMonth, 0).getDate()
@@ -39,8 +41,7 @@ const HomePage = ()=>{
       let daysInMonth = new Date(parseInt(year), newMonth, 0).getDate()
       
       setDay(daysInMonth)
-      setDay(daysInMonth)
-      setMonth(newMonth)
+      setMonth(newMonth.toString())
     }
   }
 
@@ -67,7 +68,7 @@ const HomePage = ()=>{
       let daysInMonth = new Date(parseInt(year), newMonth, 0).getDate()
       
       setDay(daysInMonth)
-      setMonth(newMonth)
+      setMonth(newMonth.toString())
     }
 
   }

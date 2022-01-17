@@ -102,7 +102,8 @@ const PictureOfTheDay = (props)=>{
 
       else{
         setCookie(date, `${!liked}`, {
-          expires: new Date(2100, 1, 1)
+          expires: new Date(2100, 1, 1),
+          path:"/"
         })
       }
 
