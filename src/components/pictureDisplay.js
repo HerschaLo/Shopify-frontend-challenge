@@ -13,6 +13,8 @@ const PictureDisplay = (props)=>{
   const query=props.query
   const [cookies] = useCookies([])
   const filterByLikes = props.filterByLikes
+
+  console.log(cookies)
   useEffect(()=>{
       let picturesCopy = []
       let images

@@ -38,7 +38,7 @@ const Login = ()=>{
         <Helmet>
           <title>Login</title>
         </Helmet>
-        <Header />
+        <Header currentPage="Login"/>
         <Box style={{display:"flex", alignItems:'center', flexDirection:"column", rowGap:"40px"}}>
           <Typography variant="h2">Login</Typography>
           <TextField label="Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
